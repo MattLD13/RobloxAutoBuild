@@ -1,5 +1,15 @@
 # How Roblox 3D hits were built, and what ROI looks like
 
+## Quick summary
+
+| | Amount (estimate) |
+|---|---|
+| **Cost per game** | **≈ $500** (range $200–$1,000): AI usage $50–$300 + launch ads $100–$500 + a share of the Studio computer |
+| **Most likely return** | **$0–$100.** Most games never earn enough to cash out (minimum 30,000 Robux ≈ $114) |
+| **Decent game** | $500–$5,000 total |
+| **Rare hit** | $20,000 to millions |
+| **Average per game** | Unknown until about 10–20 games have shipped. Expect most games to lose money and one rare hit to pay for the rest |
+
 Compiled Oct 2026. Most numbers come from press coverage and community analysis, not audited financials. Each figure links to its source. Figures marked **estimate** are my own arithmetic or assumptions.
 
 ---
