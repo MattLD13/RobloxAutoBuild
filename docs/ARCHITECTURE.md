@@ -139,6 +139,13 @@ flowchart TB
 | Marketer | mid | GDD + screenshots → store copy, ad creatives, Ads API campaign within budget, optional trailer clips for off-platform channels |
 | Live Ops Analyst | mid | analytics → ranked change requests (for example "D1 retention 9%, tutorial drop-off at step 3") that go back into the pipeline |
 
+**Budget setup (single PC + Claude Pro):**
+- Run everything on the owner's Windows PC.
+- The orchestrator is Claude Code itself, run headless (`claude -p`) from a script and signed in with the Pro subscription. A separate API-billed Agent SDK app would add per-token costs.
+- Studio's built-in MCP server and Rojo run on the same machine.
+- High-volume, low-stakes work (captions, image prompts, asset variations) can run on local models on the GPU.
+- When Pro usage limits are reached, the pipeline pauses and resumes in the next usage window instead of switching to paid API usage.
+
 Model tiers are deliberately abstract. Use the strongest available model for the planning and design roles and cheaper models for high-volume workers. Check the current lineup when implementing.
 
 ### 3.3 Code plane (headless, runs on Linux CI)

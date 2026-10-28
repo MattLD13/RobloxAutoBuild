@@ -10,6 +10,16 @@
 | **Rare hit** | $20,000 to millions |
 | **Average per game** | Unknown until about 10–20 games have shipped. Expect most games to lose money and one rare hit to pay for the rest |
 
+**Budget setup (owner's current hardware: Ryzen 5900X, 32 GB RAM, RTX 5090, Claude Pro):** extra cost per game is **≈ $0–$20**.
+
+| Item | Cost |
+|---|---|
+| Roblox Studio, publishing, and the Open Cloud APIs | Free |
+| AI building | Covered by the Pro subscription (limited by usage limits, so slower) |
+| Icons, thumbnails, and 3D models | Free: Roblox's built-in generators, or local models on the 5090 |
+| Electricity | ≈ $1–$3 (estimate) |
+| Launch ads | $0–$15 (optional small test) |
+
 Compiled Oct 2026. Most numbers come from press coverage and community analysis, not audited financials. Each figure links to its source. Figures marked **estimate** are my own arithmetic or assumptions.
 
 ---
