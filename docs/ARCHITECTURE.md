@@ -197,6 +197,8 @@ Each phase has **exit criteria**. A phase that fails retries up to N times with 
 
 ⛳ = approval gate. It skips itself when the owner has pre-approved it in `spec.yaml`.
 
+**Portfolio mode (recommended default).** Roblox outcomes follow a power law, and paid ads rarely pay back for anything short of a hit (see [HISTORY_AND_ROI.md](./HISTORY_AND_ROI.md)). So the orchestrator runs phases 0–9 as a **cheap prototype with a small soft-launch ad budget**, then applies a **kill/keep rule** based on D1 retention and session length after 3–7 days. Only kept games get the full live-ops loop and bigger ad budgets. Killed games add what was learned to the KB.
+
 ```mermaid
 stateDiagram-v2
     [*] --> Intake
@@ -317,7 +319,12 @@ Verification is layered from cheap to expensive:
   - No external links in game.
   - Use `TextChatService` filtering for any user-to-user text.
   - No dark-pattern monetization: no paid loot boxes, and prices are shown clearly.
-- **Secrets:** API keys are scoped per agent and stored in a vault. The Studio runner account is a dedicated bot account with 2FA, not the owner's main account.
+- **Secrets:** API keys are scoped per agent and stored in a vault. Never commit passwords, cookies, or API keys to the repo.
+- **Accounts:** the owner account is **`robotrevolution`**. Recommended setup:
+  - Create a **Roblox group owned by `robotrevolution`** and publish every game under that group. Revenue then pools in one place, and other accounts can be given limited roles.
+  - Create the Open Cloud API keys from `robotrevolution` (or the group). Scope each key to that group's universes only.
+  - The Studio runner signs in with either `robotrevolution` (simplest) or a separate bot account that has a builder role in the group. The bot account is safer: if the runner machine is compromised, it can't touch account settings, Robux, or DevEx.
+  - Enable 2-step verification. Cashing out through DevEx needs the account holder's own ID verification and a tax form, and only a human can do that.
 - **Blast radius:** agents can only publish to the configured universe IDs. Staging and production are different places.
 - **Cost:** per-run token budgets for each phase, plus a cache of research and docs. Small, cheap models do classification and summarization. The run aborts with a report when a cap is reached.
 - **Audit log:** every external write (publish, product create, ad create) is logged with inputs and outputs. This makes a run reviewable and reversible where the API allows.
